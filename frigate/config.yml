@@ -16,6 +16,9 @@ go2rtc:
 birdseye:
   enabled: True
   mode: continuous
+  width: 1280
+  height: 720
+  quality: 8
 
 
 cameras:
