@@ -1,4 +1,4 @@
 # FRIGATE-GARAGE
 
-terminal:
+<b>terminal:</b></br>
 sudo docker-compose -f frigate.yml up
