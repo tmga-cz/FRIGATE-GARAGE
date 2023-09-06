@@ -8,15 +8,20 @@ go2rtc:
     your_reolink_camera_sub:
       - "ffmpeg:http://192.168.1.13/flv?port=1935&app=bcs&stream=channel0_ext.bcs&user=admin&password=0pepiku0"
 
+    your_reolink_camera2:
+      - "ffmpeg:http://192.168.88.2/flv?port=1935&app=bcs&stream=channel0_main.bcs&user=admin&password=0pepiku0#video=copy#audio=copy#audio=opus"
+    your_reolink_camera_sub2:
+      - "ffmpeg:http://192.168.88.2/flv?port=1935&app=bcs&stream=channel0_ext.bcs&user=admin&password=0pepiku0"
+      
 birdseye:
   enabled: True
   mode: continuous
 
 
 cameras:
+
   PREDNI-VCHOD:
     ffmpeg:
-
       inputs:
         - path: rtsp://127.0.0.1:8554/your_reolink_camera?video=copy&audio=aac
           input_args: preset-rtsp-restream
@@ -26,6 +31,29 @@ cameras:
           input_args: preset-rtsp-restream
           roles:
             - detect
+            
+    record:
+          enabled: true
+          retain:
+            days: 1
+          events:
+            retain:
+              default: 1
+
+
+
+  ZADNI-VCHOD:
+    ffmpeg:
+      inputs:
+        - path: rtsp://127.0.0.1:8554/your_reolink_camera2?video=copy&audio=aac
+          input_args: preset-rtsp-restream
+          roles:
+            - record
+        - path: rtsp://127.0.0.1:8554/your_reolink_camera_sub2?video=copy
+          input_args: preset-rtsp-restream
+          roles:
+            - detect
+
     record:
           enabled: true
           retain:
