@@ -30,3 +30,6 @@ cameras:
           enabled: true
           retain:
             days: 1
+          events:
+            retain:
+              default: 1
