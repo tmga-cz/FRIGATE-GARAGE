@@ -1,4 +1,5 @@
 # FRIGATE-GARAGE
+<b>Frigate:</b></br>
 </br>
 https://askubuntu.com/questions/125257/how-do-i-add-an-additional-hard-drive</br>
 <br>
@@ -8,5 +9,6 @@ sudo nano /etc/fstab<br>
 sudo mount /nvr-hdd<br>
 <br>
 <br>
-<b>terminal:</b></br>
+<br>
+<b>Frigate:</b></br>
 sudo docker-compose -f frigate.yml up
