@@ -17,4 +17,5 @@ https://linux.how2shout.com/install-and-configure-docker-compose-on-ubuntu-22-04
 <br>
 <b>Frigate:</b></br>
 sudo mkdir /home/tom/frigate && cd /home/tom/frigate<br>
+https://stackoverflow.com/questions/38775954/sudo-docker-compose-command-not-found<br>
 sudo docker-compose -f frigate.yml up
